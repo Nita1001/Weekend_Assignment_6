@@ -23,10 +23,9 @@ export function checkType(element) {
         const dirt = document.querySelector("#element4");
         dirt.classList.add("dirt-tile");
     }
-    if (classList.contains("rock-tile") && currentTool === "pickAxe") {
-        classList.remove("rock-tile");
+    if (classList.contains("stone-tile") && currentTool === "pickAxe") {
+        classList.remove("stone-tile");
         const rock = document.querySelector("#element0");
-        rock.classList.add("rock-img");
-        
+        rock.classList.add("stone-img");
     }
 }
