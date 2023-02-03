@@ -62,23 +62,20 @@ function createInventory(){
         tool.setAttribute('id', `tool${i}`);
     }
 
+    const element = document.querySelector('#element2');
+    element.classList.add('apple-img');
+    const axe = document.querySelector('#tool0');
+    axe.classList.add('axe-img');
+    const shovel = document.querySelector('#tool1');
+    shovel.classList.add('shovel-img');
 }
 
+// // trying to remove dirt 
+// function handleShovel(){
 
+// }
 
-const element = document.querySelector('#element2');
-element.classList.add('apple-img');
-const axe = document.querySelector('#tool0');
-axe.classList.add('axe-img');
-const shovel = document.querySelector('#tool1');
-shovel.classList.add('shovel-img');
-
-// trying to remove dirt 
-function handleShovel(){
-
-}
-
-shovel.addEventListener('click', handleShovel());
+// shovel.addEventListener('click', handleShovel);
 
 function sky(){}
 function dirt(){}
