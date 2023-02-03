@@ -78,6 +78,7 @@ function InitialInventory(){
         element.classList.add("scale");
         element.setAttribute("id", `element${i}`);
         const header = document.createElement('h3');
+        header.setAttribute("id", `header${i}`);
         element.appendChild(header);
         header.innerText = `${count[i]}`;
     }
