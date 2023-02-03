@@ -12,10 +12,21 @@ function createGameBoard(){
         const div = document.createElement('div');
         container.appendChild(div);
         div.classList.add('tile');
-        div.classList.add('dark-tile');
-        div.classList.add('tile-border');
+        div.classList.add('sky-tile');
         div.setAttribute('id', `tile${i}`);
+       
     }
+
+
+    for(let i = (TOTAL_TILES / 2) + 8; i < TOTAL_TILES ; i++)
+    {
+        const div = document.querySelector(`#tile${i}`);
+        div.classList.remove('sky-tile');
+        div.classList.add('dirt-tile');
+    }
+
+    const div = document.querySelector(`#tile${86}`);
+    div.classList.remove('dirt-tile');
 
     // inventory - tiles and tools
     for(let i = 0; i < INV_TILES; i++)
@@ -37,6 +48,7 @@ function createGameBoard(){
         div.setAttribute('id', `tile${i}`);
     }
 
+    
 }
 
 
@@ -47,4 +59,5 @@ function dirt(){}
 createGameBoard();
 sky();
 dirt();
+        // div.classList.add('tile-border');
 

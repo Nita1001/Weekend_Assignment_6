@@ -54,7 +54,7 @@ h2{
 .sky-tile{
     background-color: #00FFF5;
 }
-.dirt-tile{
+.grey-tile{
     background-color: #393E46;
 }
 .dark-tile{
@@ -62,4 +62,11 @@ h2{
 }
 .tile-border{
     border: 1px solid #000;
+}
+
+.grass-tile{
+    background: url('/images/Grass_Block.webp') no-repeat center center/cover;
+}
+.dirt-tile{
+    background: url('/images/Dirt.webp') no-repeat center center/cover;
 }
