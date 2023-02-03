@@ -1,6 +1,13 @@
 * {
     box-sizing: border-box;
   }
+  body{
+    /* background: url('/images/wallpaperflare.com_wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: azure;
+  }
+
 
 #grids-container{
     display: flex;
@@ -11,48 +18,52 @@
     overflow: hidden;
     margin: 0 auto;
     margin-top: 4rem;
+    border: solid rgb(0, 0, 0);
+
 }
 #tiles-container{
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: repeat(16, 32px);
-    grid-template-rows: repeat(10, 32px);
+    grid-template-columns: repeat(16, 64px);
+    grid-template-rows: repeat(9, 64px);
     width: fit-content;
     height: fit-content;
 }
 
 .inventory-container{
     width: 100%;
-    border: 2px solid pink;
     display: flex;
     flex-direction: column;
+    background-color: #222831;
 }
 h2{
     font-family: 'Roboto';
     text-align: center;
     margin: 1rem;
+    color: white;
+    font-size: large;
+    background-color: #222831;
 }
 #inventory{
     display: flex;
     justify-content: space-evenly;
-    border: solid #3d7edf;
 }
 
-#inv-grid, #tools-grid{
+#elements-grid, #tools-grid{
     display: grid;
-    grid-template-columns: repeat(3, 32px);
-    grid-template-rows: repeat(2, 32px);
-    border: 2px solid black
+    grid-template-columns: repeat(3, 64px);
+    grid-template-rows: repeat(2, 64px);
+    margin-bottom: 3rem;
 }
 
 .tile{
-    width: 32px;
-    height: 32px;
+    width: 64px;
+    height: 64px;
 }
 
 .sky-tile{
-    background-color: #00FFF5;
+    background-color: #89c4e0;
 }
 .grey-tile{
     background-color: #393E46;
@@ -70,3 +81,22 @@ h2{
 .dirt-tile{
     background: url('/images/Dirt.webp') no-repeat center center/cover;
 }
+
+/* Inventory &collection & Tools */
+.apple-img{
+    background: url('/images/Apple.webp') no-repeat center center/cover;
+    background-color: rgba(0, 0, 0, 0.391);
+}
+.axe-img{
+    background: url('/images/Iron_Axe.webp') no-repeat center center/cover;
+    background-color: rgba(0, 0, 0, 0.391);
+}
+.shovel-img{
+    background: url('/images/Iron_Shovel.webp') no-repeat center center/cover;
+    background-color: rgba(0, 0, 0, 0.391);
+}
+
+.scale:hover{
+    transform: scale(1.5);
+}
+
