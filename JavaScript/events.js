@@ -1,4 +1,4 @@
-
+import { shovel, axe, pickAxe, apple } from "./InitialView.js";
 let currentTool = '';
 
 shovel.addEventListener("click", () => {
@@ -7,7 +7,7 @@ shovel.addEventListener("click", () => {
     pickAxe.style.border = "";
     apple.style.border = "";
     currentTool = 'shovel';
-    console.log('shovel');
+    console.log(currentTool);
 });
 
 axe.addEventListener("click", () => {
@@ -16,7 +16,7 @@ axe.addEventListener("click", () => {
     pickAxe.style.border = "";
     apple.style.border = "";
     currentTool = 'axe';
-    console.log('axe');
+    console.log(currentTool);
 });
 
 pickAxe.addEventListener("click", () => {
@@ -25,7 +25,7 @@ pickAxe.addEventListener("click", () => {
     axe.style.border = "";
     apple.style.border = "";
     currentTool = 'pickAxe';
-    console.log('axe');
+    console.log(currentTool);
 });
 
 
@@ -47,6 +47,27 @@ resetClicked.addEventListener("click", () => {
     pickAxe.style.border = "";
     currentTool = '';
 });
+
+
+export function checkType(element){
+    let classList = element.target.classList;
+    if (classList.contains("trunk-img") && currentTool === "axe") {
+        console.log(element);
+      classList.remove("trunk-img");
+    }
+    if (classList.contains("moss-img") && currentTool === "axe") {
+      classList.remove("moss-img");
+    }
+    if (classList.contains("rock-tile") && currentTool === "pickAxe") {
+      classList.remove("rock-tile");
+    }
+    if (classList.contains("grass-tile") && currentTool === "shovel") {
+      classList.remove("grass-tile");
+    }
+    if (classList.contains("dirt-tile") && currentTool === "shovel") {
+      classList.remove("dirt-tile");
+    }
+}
 
 
 

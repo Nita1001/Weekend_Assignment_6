@@ -1,3 +1,4 @@
+import { checkType } from "./events.js";
 const TOTAL_TILES = 144;
 const INV_TILES = 6;
 
@@ -40,6 +41,10 @@ function createGameBoard() {
         div.classList.add("tile");
         div.classList.add("sky-tile");
         div.setAttribute("id", `tile${i}`);
+        div.addEventListener("click", (element) => {
+        
+            checkType(element);
+        });
     }
     // grass
     for (let i = 96; i < 112; i++) {
@@ -58,6 +63,7 @@ function createGameBoard() {
 // Creating the inventory - for collected elements and tools
 
 function InitialInventory(){
+
     for (let i = 0; i < INV_TILES; i++) {
         const element = document.createElement("div");
         inventoryElementTiles.appendChild(element);
@@ -76,16 +82,17 @@ function InitialInventory(){
         tool.classList.add("scale");
         tool.setAttribute("id", `tool${i}`);
     }
+
 }
-  
+
 createGameBoard();
 InitialInventory();
 // Inventory - Tools & collection
 
-const axe = document.querySelector("#tool0");
-const pickAxe = document.querySelector("#tool2");
-const shovel = document.querySelector("#tool1");
-const apple = document.querySelector("#element2");
+export const axe = document.querySelector("#tool0");
+export const pickAxe = document.querySelector("#tool2");
+export const shovel = document.querySelector("#tool1");
+export const apple = document.querySelector("#element2");
 apple.classList.add("apple-img");
 axe.classList.add("axe-img");
 pickAxe.classList.add("pickAxe-img");
