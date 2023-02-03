@@ -96,7 +96,16 @@ h2{
     background-color: rgba(0, 0, 0, 0.391);
 }
 
+.moss-img{
+    background: url('/images/Moss_Block.webp') no-repeat center center/cover;
+}
+.trunk-img{
+    background: url('/images/Spruce_Log.webp') no-repeat center center/cover;
+}
+
 .scale:hover{
     transform: scale(1.5);
+    cursor: pointer;
 }
+
 
