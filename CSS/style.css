@@ -1,18 +1,18 @@
 * {
     box-sizing: border-box;
   }
+
 #grids-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: fit-content;
     height: fit-content;
-    border: solid blue;
     overflow: hidden;
     margin: 0 auto;
     margin-top: 4rem;
 }
-#tiles-container {
+#tiles-container{
     display: grid;
     align-items: center;
     justify-content: center;
@@ -20,30 +20,23 @@
     grid-template-rows: repeat(10, 32px);
     width: fit-content;
     height: fit-content;
-    border: 2px solid salmon;
-
 }
 
 .inventory-container{
-    width: fit-content;
-    height: fit-content;
+    width: 100%;
     border: 2px solid pink;
     display: flex;
     flex-direction: column;
-
 }
 h2{
     font-family: 'Roboto';
     text-align: center;
     margin: 1rem;
-
 }
 #inventory{
     display: flex;
-    width: 320px;
     justify-content: space-evenly;
     border: solid #3d7edf;
-
 }
 
 #inv-grid, #tools-grid{
@@ -53,7 +46,7 @@ h2{
     border: 2px solid black
 }
 
-.tile {
+.tile{
     width: 32px;
     height: 32px;
 }
@@ -69,20 +62,4 @@ h2{
 }
 .tile-border{
     border: 1px solid #000;
-}
-
-
-@media (min-width: 800px) {
-
-    .inventory-container{
-        width: fit-content;
-    }
-    #inv-grid, #tools-grid{
-        display: grid;
-        grid-template-columns: repeat(3, 32px);
-        grid-template-rows: repeat(2, 32px);
-    }
-    #tools-grid{
-        justify-content: flex-end;
-    } 
 }
