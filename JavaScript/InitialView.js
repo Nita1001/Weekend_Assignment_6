@@ -1,4 +1,4 @@
-import { checkType } from "./events.js";
+import { checkType } from "./handleTools.js";
 const TOTAL_TILES = 144;
 const INV_TILES = 6;
 

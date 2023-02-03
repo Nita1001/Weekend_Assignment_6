@@ -1,5 +1,7 @@
 import { shovel, axe, pickAxe, apple } from "./InitialView.js";
-let currentTool = '';
+
+
+export let currentTool = '';
 
 shovel.addEventListener("click", () => {
     shovel.style.border = "solid 2px #89c4e0";
@@ -35,6 +37,7 @@ apple.addEventListener("click", () => {
     axe.style.border = "";
     pickAxe.style.border = "";
     currentTool = 'Apple';
+    // EAT?
     console.log('Apple');
 });
 
@@ -48,31 +51,4 @@ resetClicked.addEventListener("click", () => {
     currentTool = '';
 });
 
-
-export function checkType(element){
-    let classList = element.target.classList;
-    if (classList.contains("trunk-img") && currentTool === "axe") {
-        console.log(element);
-      classList.remove("trunk-img");
-    }
-    if (classList.contains("moss-img") && currentTool === "axe") {
-      classList.remove("moss-img");
-    }
-    if (classList.contains("rock-tile") && currentTool === "pickAxe") {
-      classList.remove("rock-tile");
-    }
-    if (classList.contains("grass-tile") && currentTool === "shovel") {
-      classList.remove("grass-tile");
-    }
-    if (classList.contains("dirt-tile") && currentTool === "shovel") {
-      classList.remove("dirt-tile");
-    }
-}
-
-
-
- // check removing tile with shovel
-    // const div = document.querySelector(`#tile${86}`);
-    // div.classList.remove('dirt-tile');
-    
 
