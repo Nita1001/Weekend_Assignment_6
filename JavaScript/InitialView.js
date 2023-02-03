@@ -46,6 +46,10 @@ function createGameBoard() {
             checkType(element);
         });
     }
+    for (let i = 118; i < 136; i++) {
+        const div = document.querySelector(`#tile${i}`);
+        div.classList.add("stone-img");
+    }
     // grass
     for (let i = 96; i < 112; i++) {
         const div = document.querySelector(`#tile${i}`);
@@ -56,6 +60,8 @@ function createGameBoard() {
         const div = document.querySelector(`#tile${i}`);
         div.classList.add("dirt-tile");
     }
+    // stone
+
     // tree
     drawTree();
 }

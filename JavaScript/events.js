@@ -30,9 +30,7 @@ pickAxe.addEventListener("click", () => {
     console.log(currentTool);
 });
 
-
 apple.addEventListener("click", () => {
-    apple.style.border = "solid 2px #89c4e0";
     shovel.style.border = "";
     axe.style.border = "";
     pickAxe.style.border = "";
@@ -40,7 +38,6 @@ apple.addEventListener("click", () => {
     // EAT?
     console.log('Apple');
 });
-
 
 const resetClicked = document.querySelector("h2");
 

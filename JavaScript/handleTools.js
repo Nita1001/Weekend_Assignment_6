@@ -16,16 +16,16 @@ export function checkType(element) {
     if (classList.contains("grass-tile") && currentTool === "shovel") {
         classList.remove("grass-tile");
         const grass = document.querySelector("#element3");
-        grass.classList.add("grass-img");
+        grass.classList.add("grass-tile");
     }
     if (classList.contains("dirt-tile") && currentTool === "shovel") {
         classList.remove("dirt-tile");
         const dirt = document.querySelector("#element4");
         dirt.classList.add("dirt-tile");
     }
-    if (classList.contains("stone-tile") && currentTool === "pickAxe") {
-        classList.remove("stone-tile");
-        const rock = document.querySelector("#element0");
+    if (classList.contains("stone-img") && currentTool === "pickAxe") {
+        classList.remove("stone-img");
+        const rock = document.querySelector("#element5");
         rock.classList.add("stone-img");
     }
 }
