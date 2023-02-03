@@ -91,17 +91,24 @@ h2{
     background: url('/images/Iron_Axe.webp') no-repeat center center/cover;
     background-color: rgba(0, 0, 0, 0.391);
 }
+.pickAxe-img{
+    background: url('/images/Iron_Pickaxe.webp') no-repeat center center/cover;
+    background-color: rgba(0, 0, 0, 0.391);
+}
 .shovel-img{
     background: url('/images/Iron_Shovel.webp') no-repeat center center/cover;
     background-color: rgba(0, 0, 0, 0.391);
 }
-
 .moss-img{
     background: url('/images/Moss_Block.webp') no-repeat center center/cover;
 }
 .trunk-img{
     background: url('/images/Spruce_Log.webp') no-repeat center center/cover;
 }
+
+
+
+
 
 .scale:hover{
     transform: scale(1.5);

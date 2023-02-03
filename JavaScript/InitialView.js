@@ -1,0 +1,95 @@
+const TOTAL_TILES = 144;
+const INV_TILES = 6;
+
+let container = document.querySelector("#tiles-container");
+const inventoryElementTiles = document.querySelector("#elements-grid");
+const inventoryToolTiles = document.querySelector("#tools-grid");
+
+
+
+function drawTree(){
+    
+    const treeMoss1 = document.querySelector("#tile35");
+    treeMoss1.classList.add("moss-img");
+    const treeMoss2 = document.querySelector("#tile36");
+    treeMoss2.classList.add("moss-img");
+    const treeMoss3 = document.querySelector("#tile37");
+    treeMoss3.classList.add("moss-img");
+    const treeMoss4 = document.querySelector("#tile50");
+    treeMoss4.classList.add("moss-img");
+    const treeMoss5 = document.querySelector("#tile51");
+    treeMoss5.classList.add("moss-img");
+    const treeMoss6 = document.querySelector("#tile52");
+    treeMoss6.classList.add("moss-img");
+    const treeMoss7 = document.querySelector("#tile53");
+    treeMoss7.classList.add("moss-img");
+    const treeMoss8 = document.querySelector("#tile54");
+    treeMoss8.classList.add("moss-img");
+    const treeTrunk1 = document.querySelector("#tile68");
+    treeTrunk1.classList.add("trunk-img");
+    const treeTrunk2 = document.querySelector("#tile84");
+    treeTrunk2.classList.add("trunk-img");
+
+}
+
+function createGameBoard() {
+    // sky
+    for (let i = 0; i < TOTAL_TILES; i++) {
+        const div = document.createElement("div");
+        container.appendChild(div);
+        div.classList.add("tile");
+        div.classList.add("sky-tile");
+        div.setAttribute("id", `tile${i}`);
+    }
+    // grass
+    for (let i = 96; i < 112; i++) {
+        const div = document.querySelector(`#tile${i}`);
+        div.classList.add("grass-tile");
+    }
+    // dirt
+    for (let i = 112; i < TOTAL_TILES; i++) {
+        const div = document.querySelector(`#tile${i}`);
+        div.classList.add("dirt-tile");
+    }
+    // tree
+    drawTree();
+}
+
+// Creating the inventory - for collected elements and tools
+
+function InitialInventory(){
+    for (let i = 0; i < INV_TILES; i++) {
+        const element = document.createElement("div");
+        inventoryElementTiles.appendChild(element);
+        element.classList.add("tile");
+        element.classList.add("dark-tile");
+        element.classList.add("tile-border");
+        element.classList.add("scale");
+        element.setAttribute("id", `element${i}`);
+    }
+    for (let i = 0; i < INV_TILES; i++) {
+        const tool = document.createElement("div");
+        inventoryToolTiles.appendChild(tool);
+        tool.classList.add("tile");
+        tool.classList.add("dark-tile");
+        tool.classList.add("tile-border");
+        tool.classList.add("scale");
+        tool.setAttribute("id", `tool${i}`);
+    }
+}
+  
+createGameBoard();
+InitialInventory();
+// Inventory - Tools & collection
+
+const axe = document.querySelector("#tool0");
+const pickAxe = document.querySelector("#tool2");
+const shovel = document.querySelector("#tool1");
+const apple = document.querySelector("#element2");
+apple.classList.add("apple-img");
+axe.classList.add("axe-img");
+pickAxe.classList.add("pickAxe-img");
+shovel.classList.add("shovel-img");
+
+
+
