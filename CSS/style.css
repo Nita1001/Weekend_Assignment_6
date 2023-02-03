@@ -1,13 +1,56 @@
-
-
+* {
+    box-sizing: border-box;
+  }
+#grids-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border: solid blue;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
 #tiles-container {
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: repeat(12, 32px);
-    grid-template-rows: repeat(12, 32px);
-    min-width: 100%;
+    grid-template-columns: repeat(16, 32px);
+    grid-template-rows: repeat(10, 32px);
+    width: fit-content;
     height: fit-content;
+    border: 2px solid salmon;
+
+}
+
+.inventory-container{
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid pink;
+    display: flex;
+    flex-direction: column;
+
+}
+h2{
+    font-family: 'Roboto';
+    text-align: center;
+    margin: 1rem;
+
+}
+#inventory{
+    display: flex;
+    width: 320px;
+    justify-content: space-evenly;
+    border: solid #3d7edf;
+
+}
+
+#inv-grid, #tools-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 32px);
+    grid-template-rows: repeat(2, 32px);
+    border: 2px solid black
 }
 
 .tile {
@@ -28,40 +71,18 @@
     border: 1px solid #000;
 }
 
-#inventory{
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem auto;
-    border: solid #222831;
-    width: 100%;
-    height: 100%;
-}
 
-#inv-grid, #tools-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 32px);
-    grid-template-rows: repeat(2, 32px);
-    width: 100%;
-    margin-left: 4rem;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-}
-
-/* Tablet and desktop */
 @media (min-width: 800px) {
-    #tiles-container{
-        grid-template-columns: repeat(12, minmax(64px, 0));
-        grid-template-rows: repeat(12, minmax(64px, 0));
-    }
-    .tile {
-        width: 64px;
-        height: 64px;
+
+    .inventory-container{
+        width: fit-content;
     }
     #inv-grid, #tools-grid{
         display: grid;
-        grid-template-columns: repeat(3, 64px);
-        grid-template-rows: repeat(2, 64px);
-        width: 100%;
-        margin-left: 4rem;
+        grid-template-columns: repeat(3, 32px);
+        grid-template-rows: repeat(2, 32px);
     }
+    #tools-grid{
+        justify-content: flex-end;
+    } 
 }
