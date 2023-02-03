@@ -1,6 +1,5 @@
 import { shovel, axe, pickAxe, apple } from "./InitialView.js";
 
-
 export let currentTool = '';
 
 shovel.addEventListener("click", () => {

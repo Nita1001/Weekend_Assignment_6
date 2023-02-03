@@ -1,12 +1,11 @@
-import { checkType } from "./handleTools.js";
+import { checkType, count} from "./handleTools.js";
+
 const TOTAL_TILES = 144;
 const INV_TILES = 6;
 
 let container = document.querySelector("#tiles-container");
 const inventoryElementTiles = document.querySelector("#elements-grid");
 const inventoryToolTiles = document.querySelector("#tools-grid");
-
-
 
 function drawTree(){
     
@@ -78,6 +77,9 @@ function InitialInventory(){
         element.classList.add("tile-border");
         element.classList.add("scale");
         element.setAttribute("id", `element${i}`);
+        const header = document.createElement('h3');
+        element.appendChild(header);
+        header.innerText = `${count[i]}`;
     }
     for (let i = 0; i < INV_TILES; i++) {
         const tool = document.createElement("div");

@@ -113,7 +113,11 @@ h2{
 }
 
 
-
+div h3{
+    align-content: center;
+    font-size: large;
+    color: white;
+}
 
 
 .scale:hover{
