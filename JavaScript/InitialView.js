@@ -1,6 +1,7 @@
 import { checkType, count} from "./handleTools.js";
 
 const TOTAL_TILES = 240;
+const MOBILE_TILES = 200;
 const INV_TILES = 6;
 
 let container = document.querySelector("#tiles-container");
@@ -8,9 +9,9 @@ const inventoryElementTiles = document.querySelector("#elements-grid");
 const inventoryToolTiles = document.querySelector("#tools-grid");
 
 
-function drawSky(){
+function drawSky(total){
 
-    for (let i = 0; i < TOTAL_TILES; i++) {
+    for (let i = 0; i < total; i++) {
         const div = document.createElement("div");
         container.appendChild(div);
         div.classList.add("tile");
@@ -73,8 +74,8 @@ function drawTree(headMoss, middleMoss, trunk) {
 
 }
 
-function createGameBoard(stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk) {
-    drawSky();
+function createGameBoard(total, stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk) {
+    drawSky(total);
     drawStone(stoneStart, stoneEnd);
     drawGrass(grassStart, grassEnd);
     drawDirt(dirtStart, dirtEnd);
@@ -120,12 +121,12 @@ let matched = window.matchMedia(media_query).matches;
 if(matched) { // display this type of view
 	console.log('Screen is under 800px');
 // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(112, 140, 200, 220, 220, 240, 0, 0, 0);
+    createGameBoard(MOBILE_TILES, 112, 140, 200, 220, 220, 240, 0, 0, 0);
     InitialInventory();
 } else { // mobile/ tablet type of view
     console.log('Screen is not under 800px');
 // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(112, 140, 200, 220, 220, 240, 0, 0, 0);
+    createGameBoard(TOTAL_TILES ,112, 140, 200, 220, 220, 240, 0, 0, 0);
     InitialInventory();
 }
 
