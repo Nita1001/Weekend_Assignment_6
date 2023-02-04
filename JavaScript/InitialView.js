@@ -49,12 +49,12 @@ function drawDirt(start, end = TOTAL_TILES ){
 }
 
 function drawTree(moss, cols , trunk) {
-// top
+    // top
     for(let i = moss ; i < moss + 3; i++){
         const treeMoss = document.querySelector(`#tile${i}`);
         treeMoss.classList.add("moss-tile");
     }
-// middle moss
+    // middle moss
     for(let i = moss + cols - 1 ; i < moss + cols + 4 ; i++){
         const treeMoss = document.querySelector(`#tile${i}`);
         treeMoss.classList.add("moss-tile");
@@ -63,24 +63,12 @@ function drawTree(moss, cols , trunk) {
         const treeMoss = document.querySelector(`#tile${i}`);
         treeMoss.classList.add("moss-tile");
     }
-// trunk
+    // trunk
     for(let i = trunk ; i <= trunk + (cols * 2) ; i += cols){
         const treeMoss1 = document.querySelector(`#tile${i}`);
         treeMoss1.classList.add("trunk-tile");
     }
-
-
 }
-
-function createGameBoard(total, stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk) {
-    drawSky(total);
-    drawStone(stoneStart, stoneEnd);
-    drawGrass(grassStart, grassEnd);
-    drawDirt(dirtStart, dirtEnd);
-    drawTree(headMoss, middleMoss, trunk);
-}
-
-// Creating the inventory - for collected elements and tools
 
 function InitialInventory(){
 
@@ -109,6 +97,15 @@ function InitialInventory(){
 
 }
 
+function createGameBoard(total, stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk) {
+    drawSky(total);
+    drawStone(stoneStart, stoneEnd);
+    drawGrass(grassStart, grassEnd);
+    drawDirt(dirtStart, dirtEnd);
+    drawTree(headMoss, middleMoss, trunk);
+    InitialInventory();
+}
+
 
 // check media query 
 const mediaQueryMobile = '(max-width: 800px)';
@@ -119,22 +116,16 @@ let matchedTablet = window.matchMedia(mediaQueryTablet).matches;
 
 if(matchedMobile) { // display this type of view
 	console.log('Screen is under 800px');
-// skyEnd, stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(MOBILE_TILES, 180, 228, 144, 156, 156, MOBILE_TILES, 74, 12, 111);
-    InitialInventory();
+    createGameBoard(MOBILE_TILES, 180, MOBILE_TILES, 144, 156, 156, MOBILE_TILES, 74, 12, 111);
 } else if(matchedTablet) { // tablet type of view
     console.log('Screen is between 800px to 1540');
     createGameBoard(LAPTOP_TILES, 416, LAPTOP_TILES, 320, 352, 352, LAPTOP_TILES, 149, 32, 246);
-    InitialInventory();
-} else {
+} else { // Wide Desktop
     console.log('Screen wider than 1540');
     createGameBoard(TOTAL_TILES ,308, TOTAL_TILES, 252, 280, 280, TOTAL_TILES, 87, 28, 172);
-    InitialInventory();
 }
 
-
-// Inventory - Tools & collection
-
+// Initial Inventory - Tools & collection
 export const axe = document.querySelector("#tool0");
 export const pickAxe = document.querySelector("#tool2");
 export const shovel = document.querySelector("#tool1");
