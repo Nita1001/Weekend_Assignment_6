@@ -26,7 +26,7 @@ function drawStone(){
 
     for (let i = 118; i < 136; i++) {
         const div = document.querySelector(`#tile${i}`);
-        div.classList.add("stone-img");
+        div.classList.add("stone-tile");
     }
 }
 
@@ -49,30 +49,30 @@ function drawDirt(){
 function drawTree(){
     
     const treeMoss1 = document.querySelector("#tile35");
-    treeMoss1.classList.add("moss-img");
+    treeMoss1.classList.add("moss-tile");
     const treeMoss2 = document.querySelector("#tile36");
-    treeMoss2.classList.add("moss-img");
+    treeMoss2.classList.add("moss-tile");
     const treeMoss3 = document.querySelector("#tile37");
-    treeMoss3.classList.add("moss-img");
+    treeMoss3.classList.add("moss-tile");
     const treeMoss4 = document.querySelector("#tile50");
-    treeMoss4.classList.add("moss-img");
+    treeMoss4.classList.add("moss-tile");
     const treeMoss5 = document.querySelector("#tile51");
-    treeMoss5.classList.add("moss-img");
+    treeMoss5.classList.add("moss-tile");
     const treeMoss6 = document.querySelector("#tile52");
-    treeMoss6.classList.add("moss-img");
+    treeMoss6.classList.add("moss-tile");
     const treeMoss7 = document.querySelector("#tile53");
-    treeMoss7.classList.add("moss-img");
+    treeMoss7.classList.add("moss-tile");
     const treeMoss8 = document.querySelector("#tile54");
-    treeMoss8.classList.add("moss-img");
+    treeMoss8.classList.add("moss-tile");
     const treeTrunk1 = document.querySelector("#tile68");
-    treeTrunk1.classList.add("trunk-img");
+    treeTrunk1.classList.add("trunk-tile");
     const treeTrunk2 = document.querySelector("#tile84");
-    treeTrunk2.classList.add("trunk-img");
+    treeTrunk2.classList.add("trunk-tile");
 
 }
 
 function createGameBoard() {
-    
+
     drawSky();
     drawStone();
     drawGrass();

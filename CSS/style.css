@@ -75,14 +75,9 @@ h2{
     border: 1px solid #000;
 }
 
-.grass-tile{
-    background: url('/images/Grass_Block.webp') no-repeat center center/cover;
-}
-.dirt-tile{
-    background: url('/images/Dirt.webp') no-repeat center center/cover;
-}
 
-/* Inventory &collection & Tools */
+
+/* Inventory & collection & Tools */
 .apple-img{
     background: url('/images/Apple.webp') no-repeat center center/cover;
     background-color: rgba(0, 0, 0, 0.391);
@@ -99,16 +94,22 @@ h2{
     background: url('/images/Iron_Shovel.webp') no-repeat center center/cover;
     background-color: rgba(0, 0, 0, 0.391);
 }
-.moss-img{
+.grass-tile{
+    background: url('/images/Grass_Block.webp') no-repeat center center/cover;
+}
+.dirt-tile{
+    background: url('/images/Dirt.webp') no-repeat center center/cover;
+}
+.moss-tile{
     background: url('/images/Moss_Block.webp') no-repeat center center/cover;
 }
-.trunk-img{
+.trunk-tile{
     background: url('/images/Spruce_Log.webp') no-repeat center center/cover;
 }
-.log-img{
+.log-tile{
     background: url('/images/Spruce_Log_2.webp') no-repeat center center/cover;
 }
-.stone-img{
+.stone-tile{
     background: url('/images/Cobblestone.webp') no-repeat center center/cover;
 }
 

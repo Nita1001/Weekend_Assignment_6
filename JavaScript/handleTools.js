@@ -10,18 +10,18 @@ function updateInventory(id, i){
 export function checkType(element) {
     const classList = element.target.classList;
     const id = element.target.id;
-    if (classList.contains("trunk-img") && currentTool === "axe") {
-        classList.remove("trunk-img");
+    if (classList.contains("trunk-tile") && currentTool === "axe") {
+        classList.remove("trunk-tile");
         const trunk = document.querySelector("#element0");
-        trunk.classList.add("log-img");
+        trunk.classList.add("log-tile");
         count[0]++;
         updateInventory(id, 0);
 
     }
-    if (classList.contains("moss-img") && currentTool === "axe") {
-        classList.remove("moss-img");
+    if (classList.contains("moss-tile") && currentTool === "axe") {
+        classList.remove("moss-tile");
         const moss = document.querySelector("#element1");
-        moss.classList.add("moss-img");
+        moss.classList.add("moss-tile");
         count[1]++;
         updateInventory(id, 1);
 
@@ -42,10 +42,10 @@ export function checkType(element) {
         updateInventory(id, 4);
 
     }
-    if (classList.contains("stone-img") && currentTool === "pickAxe") {
-        classList.remove("stone-img");
+    if (classList.contains("stone-tile") && currentTool === "pickAxe") {
+        classList.remove("stone-tile");
         const rock = document.querySelector("#element5");
-        rock.classList.add("stone-img");
+        rock.classList.add("stone-tile");
         count[5]++;
         updateInventory(id, 5);
 
