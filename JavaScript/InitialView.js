@@ -1,7 +1,7 @@
 import { checkType, count} from "./handleTools.js";
 
 const TOTAL_TILES = 240;
-const MOBILE_TILES = 200;
+const MOBILE_TILES = 220;
 const INV_TILES = 6;
 
 let container = document.querySelector("#tiles-container");
@@ -126,7 +126,7 @@ if(matched) { // display this type of view
 } else { // mobile/ tablet type of view
     console.log('Screen is not under 800px');
 // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(TOTAL_TILES ,112, 140, 200, 220, 220, 240, 0, 0, 0);
+    createGameBoard(TOTAL_TILES ,112, 140, 180, 200, 210, 220, 0, 0, 0);
     InitialInventory();
 }
 
