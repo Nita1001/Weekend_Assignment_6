@@ -9,7 +9,7 @@ body{
 
 .logo{
     background: url('/images/pngwing.com.png') no-repeat center center/cover;
-    width: 264px;
+    width: 364px;
     height: 164px;
     margin: 0 auto;
 } 
@@ -53,4 +53,20 @@ body{
 .button:hover:before {
     color: hsla(0, 0%, 96%,1);
 	background: linear-gradient(to bottom, hsla(240, 9%, 18%,1), hsla(240, 6%, 12%,1));
+}
+
+
+
+@media (max-width: 800px){
+  
+    body{
+        background: url('/images/HD-wallpaper-black-minecraft.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: azure;
+    }
+    .logo{
+        width: 264px;
+        height: 164px;
+    } 
 }
