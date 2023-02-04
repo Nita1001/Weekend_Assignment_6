@@ -12,9 +12,6 @@ shovel.addEventListener("click", () => {
     apple.style.border = "";
     currentElement = '';
     currentTool = 'shovel';
-    console.log('tool', currentTool);
-    console.log('element', currentElement);
-
 });
 
 axe.addEventListener("click", () => {
@@ -24,8 +21,6 @@ axe.addEventListener("click", () => {
     apple.style.border = "";
     currentElement = '';
     currentTool = 'axe';
-    console.log('tool', currentTool);
-    console.log('element', currentElement);
 });
 
 pickAxe.addEventListener("click", () => {
@@ -35,8 +30,6 @@ pickAxe.addEventListener("click", () => {
     apple.style.border = "";
     currentElement = '';
     currentTool = 'pickAxe';
-    console.log('tool', currentTool);
-    console.log('element', currentElement);
 });
 
 
@@ -61,14 +54,12 @@ apple.addEventListener("click", () => {
     pickAxe.style.border = "";
     currentElement = 'Apple';
     // EAT?
-    console.log('element', currentElement);
 });
 
 log.addEventListener('click', () => {
     if(count[0] > 0){
         currentTool = '';
         currentElement ='log';
-        console.log(currentElement);
     }
 });
 
@@ -76,21 +67,18 @@ moss.addEventListener('click', () => {
     if(count[1] > 0){
         currentTool = '';
         currentElement ='moss';
-        console.log(currentElement);
     }
 })
 grass.addEventListener('click', () => {
     if(count[3] > 0){
         currentTool = '';
         currentElement ='grass';
-        console.log(currentElement);
     }
 })
 dirt.addEventListener('click', () => {
     if(count[4] > 0){
         currentTool = '';
         currentElement ='dirt';
-        console.log(currentElement);
     }
 })
 
@@ -98,6 +86,5 @@ stone.addEventListener('click', () => {
     if(count[5] > 0){
         currentTool = '';
         currentElement ='stone';
-        console.log(currentElement);
     }
 })
