@@ -1,6 +1,6 @@
 import { checkType, count} from "./handleTools.js";
 
-const TOTAL_TILES = 144;
+const TOTAL_TILES = 240;
 const INV_TILES = 6;
 
 let container = document.querySelector("#tiles-container");
@@ -22,38 +22,39 @@ function drawSky(){
     }
 }
 
-function drawStone(){
-
-    for (let i = 118; i < 136; i++) {
+function drawStone(start, end){
+    // 118 - 136
+    for (let i = start; i < end; i++) {
         const div = document.querySelector(`#tile${i}`);
         div.classList.add("stone-tile");
     }
 }
 
-function drawGrass(){
-
-    for (let i = 96; i < 112; i++) {
+function drawGrass(start, end){
+    // 96 - 112 
+    for (let i = start; i < end; i++) {
         const div = document.querySelector(`#tile${i}`);
         div.classList.add("grass-tile");
     }
 }
 
-function drawDirt(){
-
-    for (let i = 112; i < TOTAL_TILES; i++) {
+function drawDirt(start, end = TOTAL_TILES ){
+    // 112
+    for (let i = start; i < end ; i++) {
         const div = document.querySelector(`#tile${i}`);
         div.classList.add("dirt-tile");
     }
 }
 
-function drawTree(){
-    
+function drawTree(headMoss, middleMoss, trunk) {
+    // head moss
     const treeMoss1 = document.querySelector("#tile35");
     treeMoss1.classList.add("moss-tile");
     const treeMoss2 = document.querySelector("#tile36");
     treeMoss2.classList.add("moss-tile");
     const treeMoss3 = document.querySelector("#tile37");
     treeMoss3.classList.add("moss-tile");
+    // middle moss
     const treeMoss4 = document.querySelector("#tile50");
     treeMoss4.classList.add("moss-tile");
     const treeMoss5 = document.querySelector("#tile51");
@@ -64,6 +65,7 @@ function drawTree(){
     treeMoss7.classList.add("moss-tile");
     const treeMoss8 = document.querySelector("#tile54");
     treeMoss8.classList.add("moss-tile");
+    // trunk
     const treeTrunk1 = document.querySelector("#tile68");
     treeTrunk1.classList.add("trunk-tile");
     const treeTrunk2 = document.querySelector("#tile84");
@@ -71,13 +73,12 @@ function drawTree(){
 
 }
 
-function createGameBoard() {
-
+function createGameBoard(stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk) {
     drawSky();
-    drawStone();
-    drawGrass();
-    drawDirt();
-    drawTree();
+    drawStone(stoneStart, stoneEnd);
+    drawGrass(grassStart, grassEnd);
+    drawDirt(dirtStart, dirtEnd);
+    drawTree(headMoss, middleMoss, trunk);
 }
 
 // Creating the inventory - for collected elements and tools
@@ -109,8 +110,25 @@ function InitialInventory(){
 
 }
 
-createGameBoard();
-InitialInventory();
+
+// check media query 
+let media_query = '(max-width: 800px)';
+
+// matched or not
+let matched = window.matchMedia(media_query).matches;
+
+if(matched) { // display this type of view
+	console.log('Screen is under 800px');
+// stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
+    createGameBoard(112, 140, 200, 220, 220, 240, 0, 0, 0);
+    InitialInventory();
+} else { // mobile/ tablet type of view
+    console.log('Screen is not under 800px');
+// stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
+    createGameBoard(112, 140, 200, 220, 220, 240, 0, 0, 0);
+    InitialInventory();
+}
+
 
 // Inventory - Tools & collection
 

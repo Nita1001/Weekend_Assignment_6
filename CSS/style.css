@@ -25,7 +25,7 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: repeat(16, 64px);
+    grid-template-columns: repeat(20, 64px);
     grid-template-rows: repeat(9, 64px);
     width: fit-content;
     height: fit-content;
@@ -127,3 +127,27 @@ div h3{
 }
 
 
+@media (max-width: 800px){
+
+    #tiles-container{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(20, 32px);
+        grid-template-rows: repeat(9, 32px);
+        width: fit-content;
+        height: fit-content;
+    }
+    #elements-grid, #tools-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 32px);
+        grid-template-rows: repeat(2, 32px);
+        margin-bottom: 3rem;
+    }
+    
+    .tile{
+        width: 32px;
+        height: 32px;
+    }
+
+}
