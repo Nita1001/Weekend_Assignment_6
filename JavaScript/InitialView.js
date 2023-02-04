@@ -7,6 +7,45 @@ let container = document.querySelector("#tiles-container");
 const inventoryElementTiles = document.querySelector("#elements-grid");
 const inventoryToolTiles = document.querySelector("#tools-grid");
 
+
+function drawSky(){
+
+    for (let i = 0; i < TOTAL_TILES; i++) {
+        const div = document.createElement("div");
+        container.appendChild(div);
+        div.classList.add("tile");
+        div.classList.add("sky-tile");
+        div.setAttribute("id", `tile${i}`);
+        div.addEventListener("click", (element) => {
+            checkType(element);
+        });
+    }
+}
+
+function drawStone(){
+
+    for (let i = 118; i < 136; i++) {
+        const div = document.querySelector(`#tile${i}`);
+        div.classList.add("stone-img");
+    }
+}
+
+function drawGrass(){
+
+    for (let i = 96; i < 112; i++) {
+        const div = document.querySelector(`#tile${i}`);
+        div.classList.add("grass-tile");
+    }
+}
+
+function drawDirt(){
+
+    for (let i = 112; i < TOTAL_TILES; i++) {
+        const div = document.querySelector(`#tile${i}`);
+        div.classList.add("dirt-tile");
+    }
+}
+
 function drawTree(){
     
     const treeMoss1 = document.querySelector("#tile35");
@@ -33,35 +72,11 @@ function drawTree(){
 }
 
 function createGameBoard() {
-    // sky
-    for (let i = 0; i < TOTAL_TILES; i++) {
-        const div = document.createElement("div");
-        container.appendChild(div);
-        div.classList.add("tile");
-        div.classList.add("sky-tile");
-        div.setAttribute("id", `tile${i}`);
-        div.addEventListener("click", (element) => {
-        
-            checkType(element);
-        });
-    }
-    for (let i = 118; i < 136; i++) {
-        const div = document.querySelector(`#tile${i}`);
-        div.classList.add("stone-img");
-    }
-    // grass
-    for (let i = 96; i < 112; i++) {
-        const div = document.querySelector(`#tile${i}`);
-        div.classList.add("grass-tile");
-    }
-    // dirt
-    for (let i = 112; i < TOTAL_TILES; i++) {
-        const div = document.querySelector(`#tile${i}`);
-        div.classList.add("dirt-tile");
-    }
-    // stone
-
-    // tree
+    
+    drawSky();
+    drawStone();
+    drawGrass();
+    drawDirt();
     drawTree();
 }
 
@@ -96,6 +111,7 @@ function InitialInventory(){
 
 createGameBoard();
 InitialInventory();
+
 // Inventory - Tools & collection
 
 export const axe = document.querySelector("#tool0");

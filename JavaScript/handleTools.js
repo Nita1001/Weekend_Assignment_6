@@ -51,7 +51,5 @@ export function checkType(element) {
 
     }
 
-
-    console.log(count);
 }
 

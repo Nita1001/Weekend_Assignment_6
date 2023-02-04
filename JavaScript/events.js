@@ -2,13 +2,14 @@ import { shovel, axe, pickAxe, apple } from "./InitialView.js";
 
 export let currentTool = '';
 
+
+// TODO separate the functions from events
 shovel.addEventListener("click", () => {
     shovel.style.border = "solid 2px #89c4e0";
     axe.style.border = "";
     pickAxe.style.border = "";
     apple.style.border = "";
     currentTool = 'shovel';
-    console.log(currentTool);
 });
 
 axe.addEventListener("click", () => {
@@ -17,7 +18,6 @@ axe.addEventListener("click", () => {
     pickAxe.style.border = "";
     apple.style.border = "";
     currentTool = 'axe';
-    console.log(currentTool);
 });
 
 pickAxe.addEventListener("click", () => {
@@ -26,7 +26,6 @@ pickAxe.addEventListener("click", () => {
     axe.style.border = "";
     apple.style.border = "";
     currentTool = 'pickAxe';
-    console.log(currentTool);
 });
 
 apple.addEventListener("click", () => {
@@ -37,6 +36,7 @@ apple.addEventListener("click", () => {
     // EAT?
     console.log('Apple');
 });
+
 
 const resetClicked = document.querySelector("h2");
 
