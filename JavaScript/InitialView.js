@@ -70,6 +70,7 @@ function drawTree(moss, cols , trunk) {
     }
 }
 function drawSun(start, col){
+    
     const sun0 = document.querySelector(`#tile${start}`);
     sun0.classList.add("sun-tile");
     const sun1 = document.querySelector(`#tile${start - 1}`);
@@ -145,6 +146,8 @@ if(matchedMobile) { // display this type of view
     createGameBoard(TOTAL_TILES ,308, TOTAL_TILES, 252, 280, 280, TOTAL_TILES, 87, 28, 172, 79);
 }
 
+
+
 // Initial Inventory - Tools & collection
 export const axe = document.querySelector("#tool0");
 export const pickAxe = document.querySelector("#tool2");
@@ -154,6 +157,3 @@ apple.classList.add("apple-img");
 axe.classList.add("axe-img");
 pickAxe.classList.add("pickAxe-img");
 shovel.classList.add("shovel-img");
-
-
-

@@ -88,3 +88,4 @@ stone.addEventListener('click', () => {
         currentElement ='stone';
     }
 })
+

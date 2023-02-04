@@ -1,12 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Righteous);
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 * {
     box-sizing: border-box;
   }
+
   body{
-    /* background: url('/images/wallpaperflare.com_wallpaper.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; */
     background-color: azure;
   }
 
@@ -20,8 +18,8 @@
     margin: 0 auto;
     margin-top: 2rem;
     border: solid rgb(0, 0, 0);
-
 }
+
 #tiles-container{
     display: grid;
     align-items: center;
@@ -39,10 +37,10 @@
     background-color: #222831;
 }
 h2{
-    font-family:  'Righteous', 'Roboto';
+    font-family: 'Share Tech Mono', monospace;
     text-align: center;
     margin: 1rem;
-    color: white;
+    color: rgb(28, 15, 15);
     font-size: large;
     background-color: #222831;
 }
@@ -140,6 +138,25 @@ div h3{
 .scale:hover{
     transform: scale(1.5);
     cursor: pointer;
+}
+
+.new-btn{
+    width: 20rem;
+    padding: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: large;
+	display: inline-block;
+    margin-bottom: 2rem;
+    color: #fff;
+    background-color: #222831;
+}
+.new-btn:hover{
+    opacity: 0.8;
+    background-color:  rgba(0, 0, 0, 0.391);
 }
 
 
