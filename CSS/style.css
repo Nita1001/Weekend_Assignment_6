@@ -128,21 +128,20 @@ div h3{
 
 
 @media (max-width: 800px){
-
+    #grids-container{
+        margin: 0 0 0 0;
+        min-height: 100%;
+    }
     #tiles-container{
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: repeat(20, 32px);
+        grid-template-columns: repeat(12, 32px);
         grid-template-rows: repeat(9, 32px);
-        width: fit-content;
-        height: fit-content;
     }
     #elements-grid, #tools-grid{
-        display: grid;
         grid-template-columns: repeat(3, 32px);
         grid-template-rows: repeat(2, 32px);
-        margin-bottom: 3rem;
     }
     
     .tile{

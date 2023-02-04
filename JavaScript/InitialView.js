@@ -23,7 +23,7 @@ function drawSky(){
 }
 
 function drawStone(start, end){
-    // 118 - 136
+
     for (let i = start; i < end; i++) {
         const div = document.querySelector(`#tile${i}`);
         div.classList.add("stone-tile");
@@ -31,7 +31,7 @@ function drawStone(start, end){
 }
 
 function drawGrass(start, end){
-    // 96 - 112 
+
     for (let i = start; i < end; i++) {
         const div = document.querySelector(`#tile${i}`);
         div.classList.add("grass-tile");
@@ -39,7 +39,7 @@ function drawGrass(start, end){
 }
 
 function drawDirt(start, end = TOTAL_TILES ){
-    // 112
+
     for (let i = start; i < end ; i++) {
         const div = document.querySelector(`#tile${i}`);
         div.classList.add("dirt-tile");
