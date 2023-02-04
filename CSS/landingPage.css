@@ -21,6 +21,7 @@ body{
 .button {
 	width: 12rem;
 	height: 3rem;
+    margin-top: 8rem;
     border-radius: 1rem;
     position: relative;
     display: inline-block;
