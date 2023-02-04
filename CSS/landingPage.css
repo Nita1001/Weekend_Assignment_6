@@ -8,10 +8,9 @@ body{
 
 .logo{
     background: url('/images/pngwing.com.png') no-repeat center center/cover;
-    width: 264px;
+    width: 464px;
     height: 164px;
     margin: 0 auto;
-    margin-bottom: 4rem;
 } 
 .container{
     display: flex;
@@ -20,8 +19,8 @@ body{
     justify-content: center;
 }
 .button {
-	width: 15em;
-	height: 3em;
+	width: 12rem;
+	height: 3rem;
     border-radius: 1rem;
     position: relative;
     display: inline-block;
@@ -65,10 +64,11 @@ body{
         background-repeat: no-repeat;
         background-size: cover;
         background-color: azure;
+        width: 264px;
         height: 100%;
       }
-      .container{
-      margin-top: 22rem;
+    .container{
+      margin-top: 20rem;
     }
 
 }
