@@ -126,12 +126,10 @@ div h3{
     color: white;
 }
 
-
 .scale:hover{
     transform: scale(1.5);
     cursor: pointer;
 }
-
 
 
 @media (max-width: 800px){
@@ -148,19 +146,18 @@ div h3{
         grid-template-rows: repeat(12, 32px);
     }
     #elements-grid, #tools-grid{
-        grid-template-columns: repeat(3, 64px);
-        grid-template-rows: repeat(2, 64px);
+        grid-template-columns: repeat(3, 32px);
+        grid-template-rows: repeat(2, 32px);
+        margin-bottom: 2rem;
     }
-    #inventory{
-        column-gap: 1px;
-    }
+    
     .tile{
         width: 32px;
         height: 32px;
     }
     .inv-tile {
-        width: 64px;
-        height: 64px;
+        width: 32px;
+        height: 32px;
     }
     h2{
         font-family: 'Roboto';
@@ -183,7 +180,7 @@ div h3{
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: repeat(36, 32px);
+        grid-template-columns: repeat(32, 32px);
         grid-template-rows: repeat(16, 32px);
 
 
@@ -196,7 +193,6 @@ div h3{
         width: 32px;
         height: 32px;
     }
-
     .inv-tile {
         width: 64px;
         height: 64px;
@@ -207,7 +203,7 @@ div h3{
         text-align: center;
         margin: 0;
         color: white;
-        font-size: large;
+        font-size: 3rem;
         background-color: #222831;
     }
 

@@ -1,7 +1,7 @@
 import { checkType, count} from "./handleTools.js";
 
-const TOTAL_TILES = 360; // 64px
-const LAPTOP_TILES = 320; // 64px
+const TOTAL_TILES = 364; // 64px
+const LAPTOP_TILES = 512; // 64px
 const MOBILE_TILES = 228; // 32px
 const INV_TILES = 6;
 
@@ -48,30 +48,27 @@ function drawDirt(start, end = TOTAL_TILES ){
     }
 }
 
-function drawTree(headMoss, middleMoss, trunk) {
-    // head moss
-    const treeMoss1 = document.querySelector("#tile35");
-    treeMoss1.classList.add("moss-tile");
-    const treeMoss2 = document.querySelector("#tile36");
-    treeMoss2.classList.add("moss-tile");
-    const treeMoss3 = document.querySelector("#tile37");
-    treeMoss3.classList.add("moss-tile");
-    // middle moss
-    const treeMoss4 = document.querySelector("#tile50");
-    treeMoss4.classList.add("moss-tile");
-    const treeMoss5 = document.querySelector("#tile51");
-    treeMoss5.classList.add("moss-tile");
-    const treeMoss6 = document.querySelector("#tile52");
-    treeMoss6.classList.add("moss-tile");
-    const treeMoss7 = document.querySelector("#tile53");
-    treeMoss7.classList.add("moss-tile");
-    const treeMoss8 = document.querySelector("#tile54");
-    treeMoss8.classList.add("moss-tile");
-    // trunk
-    const treeTrunk1 = document.querySelector("#tile68");
-    treeTrunk1.classList.add("trunk-tile");
-    const treeTrunk2 = document.querySelector("#tile84");
-    treeTrunk2.classList.add("trunk-tile");
+function drawTree(moss, cols , trunk) {
+// top
+    for(let i = moss ; i < moss + 3; i++){
+        const treeMoss = document.querySelector(`#tile${i}`);
+        treeMoss.classList.add("moss-tile");
+    }
+// middle moss
+    for(let i = moss + cols - 1 ; i < moss + cols + 4 ; i++){
+        const treeMoss = document.querySelector(`#tile${i}`);
+        treeMoss.classList.add("moss-tile");
+    }
+    for(let i = moss + (cols * 2) - 1 ; i < moss + (cols * 2) + 4 ; i++){
+        const treeMoss = document.querySelector(`#tile${i}`);
+        treeMoss.classList.add("moss-tile");
+    }
+// trunk
+    for(let i = trunk ; i <= trunk + (cols * 2) ; i += cols){
+        const treeMoss1 = document.querySelector(`#tile${i}`);
+        treeMoss1.classList.add("trunk-tile");
+    }
+
 
 }
 
@@ -85,12 +82,12 @@ function createGameBoard(total, stoneStart, stoneEnd, grassStart, grassEnd, dirt
 
 // Creating the inventory - for collected elements and tools
 
-function InitialInventory(tileSize){
+function InitialInventory(){
 
     for (let i = 0; i < INV_TILES; i++) {
         const element = document.createElement("div");
         inventoryElementTiles.appendChild(element);
-        element.classList.add(`${tileSize}`);
+        element.classList.add('inv-tile');
         element.classList.add("dark-tile");
         element.classList.add("tile-border");
         element.classList.add("scale");
@@ -103,7 +100,7 @@ function InitialInventory(tileSize){
     for (let i = 0; i < INV_TILES; i++) {
         const tool = document.createElement("div");
         inventoryToolTiles.appendChild(tool);
-        tool.classList.add(`${tileSize}`);
+        tool.classList.add('inv-tile');
         tool.classList.add("dark-tile");
         tool.classList.add("tile-border");
         tool.classList.add("scale");
@@ -122,17 +119,17 @@ let matchedTablet = window.matchMedia(mediaQueryTablet).matches;
 
 if(matchedMobile) { // display this type of view
 	console.log('Screen is under 800px');
-// stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(MOBILE_TILES, 112, 140, 200, 220, 110, 169, 0, 0, 0);
-    InitialInventory('inv-tile');
+// skyEnd, stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
+    createGameBoard(MOBILE_TILES, 180, 228, 144, 156, 156, MOBILE_TILES, 74, 12, 111);
+    InitialInventory();
 } else if(matchedTablet) { // tablet type of view
     console.log('Screen is between 800px to 1540');
-    createGameBoard(LAPTOP_TILES, 154, LAPTOP_TILES, 110, 130, 130, LAPTOP_TILES, 0, 0, 0);
-    InitialInventory('inv-tile');
+    createGameBoard(LAPTOP_TILES, 416, LAPTOP_TILES, 320, 352, 352, LAPTOP_TILES, 149, 32, 246);
+    InitialInventory();
 } else {
     console.log('Screen wider than 1540');
-    createGameBoard(TOTAL_TILES ,300, TOTAL_TILES, 260, 280, 280, TOTAL_TILES, 0, 0, 0);
-    InitialInventory('inv-tile');
+    createGameBoard(TOTAL_TILES ,308, TOTAL_TILES, 252, 280, 280, TOTAL_TILES, 87, 28, 172);
+    InitialInventory();
 }
 
 
