@@ -54,28 +54,6 @@ body{
 	background: linear-gradient(to bottom, hsla(240, 9%, 18%,1), hsla(240, 6%, 12%,1));
 }
 
-
-
-
-@media (max-width: 800px){
-
-    body{
-        background: url('/images/HD-wallpaper-black-minecraft.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: azure;
-        width: 264px;
-        height: 100%;
-      }
-    .container{
-      margin-top: 20rem;
-    }
-
-}
-
-
-
-
 @media (max-width: 800px){
   
     body{
