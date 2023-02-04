@@ -1,8 +1,8 @@
 import { checkType, count} from "./handleTools.js";
 
-const TOTAL_TILES = 300;
-const LAPTOP_TILES = 170;
-const MOBILE_TILES = 228;
+const TOTAL_TILES = 320; // 64px
+const LAPTOP_TILES = 176; // 64px
+const MOBILE_TILES = 228; // 32px
 const INV_TILES = 6;
 
 let container = document.querySelector("#tiles-container");
