@@ -121,12 +121,12 @@ let matched = window.matchMedia(media_query).matches;
 if(matched) { // display this type of view
 	console.log('Screen is under 800px');
 // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(MOBILE_TILES, 112, 140, 200, 220, 220, 240, 0, 0, 0);
+    createGameBoard(MOBILE_TILES, 112, 140, 200, 220, 220, 200, 0, 0, 0);
     InitialInventory();
 } else { // mobile/ tablet type of view
     console.log('Screen is not under 800px');
 // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(TOTAL_TILES ,112, 140, 180, 200, 210, 220, 0, 0, 0);
+    createGameBoard(TOTAL_TILES ,112, 140, 180, 200, 210, 240, 0, 0, 0);
     InitialInventory();
 }
 

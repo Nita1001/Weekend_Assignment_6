@@ -137,13 +137,12 @@ div h3{
         align-items: center;
         justify-content: center;
         grid-template-columns: repeat(12, 32px);
-        grid-template-rows: repeat(8, 32px);
+        grid-template-rows: repeat(19, 32px);
     }
     #elements-grid, #tools-grid{
         grid-template-columns: repeat(3, 32px);
         grid-template-rows: repeat(2, 32px);
     }
-    
     .tile{
         width: 32px;
         height: 32px;
