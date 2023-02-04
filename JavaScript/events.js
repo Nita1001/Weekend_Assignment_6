@@ -15,7 +15,6 @@ shovel.addEventListener("click", () => {
     console.log('tool', currentTool);
     console.log('element', currentElement);
 
-
 });
 
 axe.addEventListener("click", () => {
@@ -40,20 +39,8 @@ pickAxe.addEventListener("click", () => {
     console.log('element', currentElement);
 });
 
-apple.addEventListener("click", () => {
-    shovel.style.border = "";
-    axe.style.border = "";
-    pickAxe.style.border = "";
-    currentElement = 'Apple';
-    // EAT?
-    console.log('element', currentElement);
-});
-
-
-
 
 const resetClicked = document.querySelector("h2");
-
 resetClicked.addEventListener("click", () => {
     shovel.style.border = "";
     axe.style.border = "";
@@ -68,13 +55,21 @@ const grass = document.querySelector('#element3');
 const dirt = document.querySelector('#element4');
 const stone = document.querySelector('#element5');
 
+apple.addEventListener("click", () => {
+    shovel.style.border = "";
+    axe.style.border = "";
+    pickAxe.style.border = "";
+    currentElement = 'Apple';
+    // EAT?
+    console.log('element', currentElement);
+});
+
 log.addEventListener('click', () => {
     if(count[0] > 0){
         currentTool = '';
         currentElement ='log';
         console.log(currentElement);
     }
-  
 });
 
 moss.addEventListener('click', () => {
