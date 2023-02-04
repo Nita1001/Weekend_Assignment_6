@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
 * {
     box-sizing: border-box;
   }
@@ -7,7 +9,6 @@
     background-size: cover; */
     background-color: azure;
   }
-
 
 #grids-container{
     display: flex;
@@ -38,7 +39,7 @@
     background-color: #222831;
 }
 h2{
-    font-family: 'Roboto';
+    font-family:  'Righteous', 'Roboto';
     text-align: center;
     margin: 1rem;
     color: white;
@@ -69,13 +70,23 @@ h2{
 
 
 .sky-tile{
-    background-color: #89c4e0;
+    /* background-color: #89c4e0; */
+    /* background-color: #86E5FF; */
+    background-color: #5BC0F8;
 }
 .grey-tile{
     background-color: #393E46;
 }
 .dark-tile{
     background-color: #222831;
+}
+.sun-tile{
+    background-color: #faf5a0;
+}
+.sun-light{
+    background-color: #faf5a0;
+    opacity: 0.8;
+
 }
 .tile-border{
     border: 1px solid #000;
@@ -182,8 +193,6 @@ div h3{
         justify-content: center;
         grid-template-columns: repeat(32, 32px);
         grid-template-rows: repeat(16, 32px);
-
-
     }
     #elements-grid, #tools-grid{
         grid-template-columns: repeat(3, 64px);

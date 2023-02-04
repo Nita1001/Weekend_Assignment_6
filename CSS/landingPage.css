@@ -1,0 +1,56 @@
+
+body{
+    background: url('/images/wallpaperflare.com_wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: azure;
+  }
+
+
+.logo{
+    background: url('/images/pngwing.com.png') no-repeat center center/cover;
+    width: 264px;
+    height: 164px;
+    margin: 0 auto;
+} 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+	width: 15em;
+	height: 3em;
+    border-radius: 1rem;
+    position: relative;
+    display: inline-block;
+	background: hsla(240, 9%, 11%,1);
+    border-top: 1px solid hsla(240, 9%, 6%,1);
+	box-shadow: 0 1px 0 hsla(255,255%,255%,0.05), 0 0 1px hsla(255,255%,255%,0.1), inset 0 1px 2px hsla(0,0%,0%,0.2);
+}
+.button:before {
+    content: "START GAME";
+    position: absolute;
+    font-weight:bolder;
+	text-decoration: none;
+	text-align: center;
+    top: 2px;
+	left: 3px;
+    z-index: 0;
+    right: 3px;
+	bottom: 3px;
+    font-size: 117%;
+	line-height: 1.2;
+	padding: .5em 0 0;
+	border-radius: 1rem;
+	letter-spacing: .08em;
+    color: hsla(0, 0%, 87%,1);
+    text-shadow: 0 -1px 1px hsla(0,0%,0%,0.5);
+    background: linear-gradient(to bottom, hsla(240, 8%, 15%,1), hsla(240, 8%,9%,1));
+	box-shadow: inset 0 1px 0 hsla(255,255%,255%,0.05), inset 0 0 1px hsla(255,255%,255%,0.1), 0 4px 6px hsla(0,0%,0%,0.85), 0 1px 2px hsla(0,0%,0%,0.9);
+}
+.button:hover:before {
+    color: hsla(0, 0%, 96%,1);
+	background: linear-gradient(to bottom, hsla(240, 9%, 18%,1), hsla(240, 6%, 12%,1));
+}

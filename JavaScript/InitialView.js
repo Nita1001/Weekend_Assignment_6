@@ -69,7 +69,26 @@ function drawTree(moss, cols , trunk) {
         treeMoss1.classList.add("trunk-tile");
     }
 }
-
+function drawSun(start, col){
+    const sun0 = document.querySelector(`#tile${start}`);
+    sun0.classList.add("sun-tile");
+    const sun1 = document.querySelector(`#tile${start - 1}`);
+    sun1.classList.add("sun-tile");
+    const sun2 = document.querySelector(`#tile${start + 1}`);
+    sun2.classList.add("sun-tile");
+    const sun3 = document.querySelector(`#tile${start - col}`);
+    sun3.classList.add("sun-tile");
+    const sun4 = document.querySelector(`#tile${start + col}`);
+    sun4.classList.add("sun-tile");
+    const a1 = document.querySelector(`#tile${start + col - 1}`);
+    a1.classList.add('sun-light');
+    const a2 = document.querySelector(`#tile${start + col + 1}`);
+    a2.classList.add('sun-light');
+    const a3 = document.querySelector(`#tile${start - col - 1}`);
+    a3.classList.add('sun-light');
+    const a4 = document.querySelector(`#tile${start - col + 1}`);
+    a4.classList.add('sun-light');
+}
 function InitialInventory(){
 
     for (let i = 0; i < INV_TILES; i++) {
@@ -97,12 +116,13 @@ function InitialInventory(){
 
 }
 
-function createGameBoard(total, stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk) {
+function createGameBoard(total, stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, cols, trunk, sunStart) {
     drawSky(total);
     drawStone(stoneStart, stoneEnd);
     drawGrass(grassStart, grassEnd);
     drawDirt(dirtStart, dirtEnd);
-    drawTree(headMoss, middleMoss, trunk);
+    drawTree(headMoss, cols, trunk);
+    drawSun(sunStart, cols);
     InitialInventory();
 }
 
@@ -116,13 +136,13 @@ let matchedTablet = window.matchMedia(mediaQueryTablet).matches;
 
 if(matchedMobile) { // display this type of view
 	console.log('Screen is under 800px');
-    createGameBoard(MOBILE_TILES, 180, MOBILE_TILES, 144, 156, 156, MOBILE_TILES, 74, 12, 111);
+    createGameBoard(MOBILE_TILES, 180, MOBILE_TILES, 144, 156, 156, MOBILE_TILES, 74, 12, 111, 33 );
 } else if(matchedTablet) { // tablet type of view
     console.log('Screen is between 800px to 1540');
-    createGameBoard(LAPTOP_TILES, 416, LAPTOP_TILES, 320, 352, 352, LAPTOP_TILES, 149, 32, 246);
+    createGameBoard(LAPTOP_TILES, 416, LAPTOP_TILES, 320, 352, 352, LAPTOP_TILES, 149, 32, 246, 69);
 } else { // Wide Desktop
     console.log('Screen wider than 1540');
-    createGameBoard(TOTAL_TILES ,308, TOTAL_TILES, 252, 280, 280, TOTAL_TILES, 87, 28, 172);
+    createGameBoard(TOTAL_TILES ,308, TOTAL_TILES, 252, 280, 280, TOTAL_TILES, 87, 28, 172, 79);
 }
 
 // Initial Inventory - Tools & collection
