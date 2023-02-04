@@ -148,12 +148,19 @@ div h3{
         grid-template-rows: repeat(12, 32px);
     }
     #elements-grid, #tools-grid{
-        grid-template-columns: repeat(3, 32px);
-        grid-template-rows: repeat(2, 32px);
+        grid-template-columns: repeat(3, 64px);
+        grid-template-rows: repeat(2, 64px);
+    }
+    #inventory{
+        column-gap: 1px;
     }
     .tile{
         width: 32px;
         height: 32px;
+    }
+    .inv-tile {
+        width: 64px;
+        height: 64px;
     }
     h2{
         font-family: 'Roboto';
