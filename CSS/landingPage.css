@@ -21,7 +21,6 @@ body{
 .button {
 	width: 12rem;
 	height: 3rem;
-    margin-top: 8rem;
     border-radius: 1rem;
     position: relative;
     display: inline-block;
@@ -66,6 +65,9 @@ body{
     .logo{
         width: 264px;
         height: 164px;
-        margin-top: 15rem;
+        margin-top: 16rem;
     } 
+    .button{
+        margin-top: 19rem;
+    }
 }
