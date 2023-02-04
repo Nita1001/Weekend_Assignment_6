@@ -4,6 +4,34 @@ export let count = ["", "", 1, "", "", ""];
 function updateInventory(id, i) {
     const header = document.querySelector(`#header${i}`);
     header.innerText = `${count[i]}`;
+
+    if(count[i] === 0){
+        const element = document.querySelector(`#element${i}`);
+        console.log('i is', i);
+        console.log('element is', `#element${i}`);
+        switch(i){
+            case 0:
+                element.classList.remove('log-tile');
+                break;
+            case 1:
+                element.classList.remove('moss-tile');
+                break;
+            case 2:
+                element.classList.remove('apple-img');
+                break;
+            case 3:
+                element.classList.remove('grass-tile');
+                break;
+            case 4:
+                element.classList.remove('dirt-tile');
+                break;
+            case 5:
+                element.classList.remove('stone-tile');
+                break;
+        }
+       
+    }
+
 }
 
 export function checkType(element) {
@@ -44,7 +72,10 @@ export function checkType(element) {
         count[5]++;
         updateInventory(id, 5);
     }
+
     console.log(classList);
+
+
     if (classList.contains("sky-tile")) {
         switch (currentElement) {
             case "log":
@@ -53,7 +84,6 @@ export function checkType(element) {
                     count[0]--;
                     updateInventory(id, 0);
                 }
-                
                 break;
             case "moss":
                 if(count[1] > 0){
@@ -78,7 +108,7 @@ export function checkType(element) {
                 break;
             case "grass":
                 if(count[3] > 0){
-                    classList.add("dirt-tile");
+                    classList.add("grass-tile");
                     count[3]--;
                     updateInventory(id, 3);
                 }
@@ -90,8 +120,6 @@ export function checkType(element) {
                     updateInventory(id, 2);
                 }
                 break;
-            default:
-                console.log('something went wrong');
         }
         
     }
