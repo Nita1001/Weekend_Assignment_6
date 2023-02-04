@@ -6,7 +6,6 @@ body{
     background-color: azure;
   }
 
-
 .logo{
     background: url('/images/pngwing.com.png') no-repeat center center/cover;
     width: 264px;
@@ -54,3 +53,22 @@ body{
     color: hsla(0, 0%, 96%,1);
 	background: linear-gradient(to bottom, hsla(240, 9%, 18%,1), hsla(240, 6%, 12%,1));
 }
+
+
+
+
+@media (max-width: 800px){
+
+    body{
+        background: url('/images/HD-wallpaper-black-minecraft.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: azure;
+        height: 100%;
+      }
+      .container{
+      margin-top: 26rem;
+    }
+
+}
+
