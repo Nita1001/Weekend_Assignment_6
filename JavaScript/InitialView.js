@@ -1,7 +1,8 @@
 import { checkType, count} from "./handleTools.js";
 
-const TOTAL_TILES = 240;
-const MOBILE_TILES = 220;
+const TOTAL_TILES = 300;
+const LAPTOP_TILES = 170;
+const MOBILE_TILES = 228;
 const INV_TILES = 6;
 
 let container = document.querySelector("#tiles-container");
@@ -113,21 +114,27 @@ function InitialInventory(){
 
 
 // check media query 
-let media_query = '(max-width: 800px)';
-
+const mediaQueryMobile = '(max-width: 800px)';
+const mediaQueryTablet = '(min-width: 801px) and (max-width: 1540px)'
 // matched or not
-let matched = window.matchMedia(media_query).matches;
+let matchedMobile = window.matchMedia(mediaQueryMobile).matches;
+let matchedTablet = window.matchMedia(mediaQueryTablet).matches;
 
-if(matched) { // display this type of view
+if(matchedMobile) { // display this type of view
 	console.log('Screen is under 800px');
 // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
     createGameBoard(MOBILE_TILES, 112, 140, 200, 220, 220, 200, 0, 0, 0);
     InitialInventory();
-} else { // mobile/ tablet type of view
-    console.log('Screen is not under 800px');
+} else if(matchedTablet) { // tablet type of view
+    console.log('Screen is between 800px to 1540');
 // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(TOTAL_TILES ,112, 140, 180, 200, 210, 240, 0, 0, 0);
+    createGameBoard(LAPTOP_TILES, 112, 140, 180, 100, 110, 160, 0, 0, 0);
     InitialInventory();
+} else {
+    console.log('Screen wider than 1540');
+    // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
+        createGameBoard(TOTAL_TILES ,112, 140, 180, 230, 210, 260, 0, 0, 0);
+        InitialInventory();
 }
 
 

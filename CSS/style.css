@@ -157,3 +157,37 @@ div h3{
     }
 
 }
+
+@media (min-width: 801px) and (max-width: 1540px){
+    #grids-container{
+        margin: 0 auto;
+        min-height: 100%;
+    }
+    #tiles-container{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(22, 64px);
+        grid-template-rows: repeat(8, 64px);
+        min-width: 100%;
+        min-height: 100%;
+
+    }
+    #elements-grid, #tools-grid{
+        grid-template-columns: repeat(3, 64px);
+        grid-template-rows: repeat(2, 64px);
+    }
+    .tile{
+        width: 64px;
+        height: 64px;
+    }
+    h2{
+        font-family: 'Roboto';
+        text-align: center;
+        margin: 0;
+        color: white;
+        font-size: large;
+        background-color: #222831;
+    }
+
+}
