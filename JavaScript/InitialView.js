@@ -1,7 +1,7 @@
 import { checkType, count} from "./handleTools.js";
 
-const TOTAL_TILES = 320; // 64px
-const LAPTOP_TILES = 176; // 64px
+const TOTAL_TILES = 360; // 64px
+const LAPTOP_TILES = 320; // 64px
 const MOBILE_TILES = 228; // 32px
 const INV_TILES = 6;
 
@@ -85,12 +85,12 @@ function createGameBoard(total, stoneStart, stoneEnd, grassStart, grassEnd, dirt
 
 // Creating the inventory - for collected elements and tools
 
-function InitialInventory(){
+function InitialInventory(tileSize){
 
     for (let i = 0; i < INV_TILES; i++) {
         const element = document.createElement("div");
         inventoryElementTiles.appendChild(element);
-        element.classList.add("tile");
+        element.classList.add(`${tileSize}`);
         element.classList.add("dark-tile");
         element.classList.add("tile-border");
         element.classList.add("scale");
@@ -103,7 +103,7 @@ function InitialInventory(){
     for (let i = 0; i < INV_TILES; i++) {
         const tool = document.createElement("div");
         inventoryToolTiles.appendChild(tool);
-        tool.classList.add("tile");
+        tool.classList.add(`${tileSize}`);
         tool.classList.add("dark-tile");
         tool.classList.add("tile-border");
         tool.classList.add("scale");
@@ -123,18 +123,16 @@ let matchedTablet = window.matchMedia(mediaQueryTablet).matches;
 if(matchedMobile) { // display this type of view
 	console.log('Screen is under 800px');
 // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(MOBILE_TILES, 112, 140, 200, 220, 220, 200, 0, 0, 0);
-    InitialInventory();
+    createGameBoard(MOBILE_TILES, 112, 140, 200, 220, 110, 169, 0, 0, 0);
+    InitialInventory('inv-tile');
 } else if(matchedTablet) { // tablet type of view
     console.log('Screen is between 800px to 1540');
-// stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-    createGameBoard(LAPTOP_TILES, 112, 140, 180, 100, 110, 160, 0, 0, 0);
-    InitialInventory();
+    createGameBoard(LAPTOP_TILES, 154, LAPTOP_TILES, 110, 130, 130, LAPTOP_TILES, 0, 0, 0);
+    InitialInventory('inv-tile');
 } else {
     console.log('Screen wider than 1540');
-    // stoneStart, stoneEnd, grassStart, grassEnd, dirtStart, dirtEnd, headMoss, middleMoss, trunk
-        createGameBoard(TOTAL_TILES ,112, 140, 180, 230, 210, 260, 0, 0, 0);
-        InitialInventory();
+    createGameBoard(TOTAL_TILES ,300, TOTAL_TILES, 260, 280, 280, TOTAL_TILES, 0, 0, 0);
+    InitialInventory('inv-tile');
 }
 
 

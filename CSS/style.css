@@ -17,7 +17,7 @@
     height: fit-content;
     overflow: hidden;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 2rem;
     border: solid rgb(0, 0, 0);
 
 }
@@ -25,7 +25,7 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: repeat(20, 64px);
+    grid-template-columns: repeat(28, 64px);
     grid-template-rows: repeat(9, 64px);
     width: fit-content;
     height: fit-content;
@@ -61,6 +61,12 @@ h2{
     width: 64px;
     height: 64px;
 }
+
+.inv-tile {
+    width: 64px;
+    height: 64px;
+}
+
 
 .sky-tile{
     background-color: #89c4e0;
@@ -127,17 +133,19 @@ div h3{
 }
 
 
+
 @media (max-width: 800px){
     #grids-container{
         margin: 0 auto;
         min-height: 100%;
+        margin-top: 0;
     }
     #tiles-container{
         display: grid;
         align-items: center;
         justify-content: center;
         grid-template-columns: repeat(12, 32px);
-        grid-template-rows: repeat(19, 32px);
+        grid-template-rows: repeat(12, 32px);
     }
     #elements-grid, #tools-grid{
         grid-template-columns: repeat(3, 32px);
@@ -158,19 +166,19 @@ div h3{
 
 }
 
-@media (min-width: 801px) and (max-width: 1540px){
+@media (min-width: 801px) and (max-width: 1800px){
     #grids-container{
         margin: 0 auto;
         min-height: 100%;
+        margin-top: 1rem;
     }
     #tiles-container{
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: repeat(22, 64px);
-        grid-template-rows: repeat(8, 64px);
-        min-width: 100%;
-        min-height: 100%;
+        grid-template-columns: repeat(36, 32px);
+        grid-template-rows: repeat(16, 32px);
+
 
     }
     #elements-grid, #tools-grid{
@@ -178,9 +186,15 @@ div h3{
         grid-template-rows: repeat(2, 64px);
     }
     .tile{
+        width: 32px;
+        height: 32px;
+    }
+
+    .inv-tile {
         width: 64px;
         height: 64px;
     }
+   
     h2{
         font-family: 'Roboto';
         text-align: center;
