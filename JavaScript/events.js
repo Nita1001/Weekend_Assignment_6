@@ -1,35 +1,36 @@
 import { shovel, axe, pickAxe, apple } from "./InitialView.js";
 import { count } from "./handleTools.js"
+
 export let currentTool = '';
 export let currentElement = '';
 
-
-// TODO separate the functions from events
-shovel.addEventListener("click", () => {
-    shovel.classList.add('clicked-border');
-    axe.classList.remove('clicked-border');
-    pickAxe.classList.remove('clicked-border');
-    apple.classList.remove('clicked-border');
+function holdTool(tool) {
+    tool.classList.add('clicked-border');
+    for (let i = 0; i < 3; i++) {
+        const other = document.querySelector(`#tool${i}`);
+        if (other.id != tool.id) {
+            other.classList.remove('clicked-border');
+        }
+    }
     currentElement = '';
+}
+
+shovel.addEventListener("click", () => {
     currentTool = 'shovel';
+    holdTool(shovel);
 });
 
+
 axe.addEventListener("click", () => {
-    axe.classList.add('clicked-border');
-    shovel.classList.remove('clicked-border');
-    pickAxe.classList.remove('clicked-border');
-    apple.classList.remove('clicked-border');
-    currentElement = '';
     currentTool = 'axe';
+    holdTool(axe);
+
 });
 
 pickAxe.addEventListener("click", () => {
-    pickAxe.classList.add('clicked-border');
-    axe.classList.remove('clicked-border');
-    shovel.classList.remove('clicked-border');
-    apple.classList.remove('clicked-border');
-    currentElement = '';
     currentTool = 'pickAxe';
+    holdTool(pickAxe);
+
 });
 
 
@@ -58,35 +59,35 @@ apple.addEventListener("click", () => {
 });
 
 log.addEventListener('click', () => {
-    if(count[0] > 0){
+    if (count[0] > 0) {
         currentTool = '';
-        currentElement ='log';
+        currentElement = 'log';
     }
 });
 
 moss.addEventListener('click', () => {
-    if(count[1] > 0){
+    if (count[1] > 0) {
         currentTool = '';
-        currentElement ='moss';
+        currentElement = 'moss';
     }
 })
 grass.addEventListener('click', () => {
-    if(count[3] > 0){
+    if (count[3] > 0) {
         currentTool = '';
-        currentElement ='grass';
+        currentElement = 'grass';
     }
 })
 dirt.addEventListener('click', () => {
-    if(count[4] > 0){
+    if (count[4] > 0) {
         currentTool = '';
-        currentElement ='dirt';
+        currentElement = 'dirt';
     }
 })
 
 stone.addEventListener('click', () => {
-    if(count[5] > 0){
+    if (count[5] > 0) {
         currentTool = '';
-        currentElement ='stone';
+        currentElement = 'stone';
     }
 })
 
