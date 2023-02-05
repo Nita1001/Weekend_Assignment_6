@@ -6,28 +6,28 @@ export let currentElement = '';
 
 // TODO separate the functions from events
 shovel.addEventListener("click", () => {
-    shovel.style.border = "solid 2px #89c4e0";
-    axe.style.border = "";
-    pickAxe.style.border = "";
-    apple.style.border = "";
+    shovel.classList.add('clicked-border');
+    axe.classList.remove('clicked-border');
+    pickAxe.classList.remove('clicked-border');
+    apple.classList.remove('clicked-border');
     currentElement = '';
     currentTool = 'shovel';
 });
 
 axe.addEventListener("click", () => {
-    axe.style.border = "solid 2px #89c4e0";
-    shovel.style.border = "";
-    pickAxe.style.border = "";
-    apple.style.border = "";
+    axe.classList.add('clicked-border');
+    shovel.classList.remove('clicked-border');
+    pickAxe.classList.remove('clicked-border');
+    apple.classList.remove('clicked-border');
     currentElement = '';
     currentTool = 'axe';
 });
 
 pickAxe.addEventListener("click", () => {
-    pickAxe.style.border = "solid 2px #89c4e0";
-    shovel.style.border = "";
-    axe.style.border = "";
-    apple.style.border = "";
+    pickAxe.classList.add('clicked-border');
+    axe.classList.remove('clicked-border');
+    shovel.classList.remove('clicked-border');
+    apple.classList.remove('clicked-border');
     currentElement = '';
     currentTool = 'pickAxe';
 });
@@ -35,9 +35,10 @@ pickAxe.addEventListener("click", () => {
 
 const resetClicked = document.querySelector("h2");
 resetClicked.addEventListener("click", () => {
-    shovel.style.border = "";
-    axe.style.border = "";
-    pickAxe.style.border = "";
+    shovel.classList.remove('clicked-border');
+    axe.classList.remove('clicked-border');
+    pickAxe.classList.remove('clicked-border');
+    apple.classList.remove('clicked-border');
     currentTool = '';
     currentElement = '';
 });
